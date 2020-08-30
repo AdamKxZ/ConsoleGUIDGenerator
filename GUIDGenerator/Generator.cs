@@ -7,6 +7,7 @@ namespace GUIDGenerator
     class Generator
     {
         public List<string> GUIDS = new List<string>();
+        public string answer { get; set; }
         public void GenerateGuid()
         {
             var guid = Guid.NewGuid().ToString().ToUpper();
@@ -20,6 +21,18 @@ namespace GUIDGenerator
         public void StartProgram()
         {
             Console.WriteLine("Basic Console GUID Generator");
+            Console.WriteLine();
+        }
+
+        public void Menu()
+        {
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1. Generate GUID");
+            Console.WriteLine("2. Generate Multiple GUIDs");
+            Console.WriteLine("3. List GUIDs Generated");
+            Console.WriteLine("4. QUIT");
+            Console.Write("OPTION: ");
+            answer = Console.ReadLine();
             Console.WriteLine();
         }
 

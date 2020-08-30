@@ -36,43 +36,36 @@ namespace GUIDGenerator
                 bool askToContinue = true;
                 do
                 {
-                    Console.WriteLine("What would you like to do?");
-                    Console.WriteLine("1. Generate GUID");
-                    Console.WriteLine("2. Generate Multiple GUIDs");
-                    Console.WriteLine("3. List GUIDs Generated");
-                    Console.WriteLine("4. QUIT");
-                    Console.Write("OPTION: ");
-                    var answer = Console.ReadLine();
-                    Console.WriteLine();
+                    gen.Menu();
 
-                    if (answer == "1")
+                    if (gen.answer == "1")
                     {
                         Console.Clear();
                         isValid = true;
                         askToContinue = false;
                     }
-                    else if (answer == "2")
+                    else if (gen.answer == "2")
                     {
                         gen.GenerateMultipleGuid();
                         isValid = false;
                         askToContinue = false;
                         AskToContinue();
                     }
-                    else if (answer == "3")
+                    else if (gen.answer == "3")
                     {
                         gen.PrintList();
                         isValid = false;
                         askToContinue = false;
                         AskToContinue();
                     }
-                    else if (answer == "4")
+                    else if (gen.answer == "4")
                     {
                         isValid = false;
                         askToContinue = false;
                     }
                     else
                     {
-                        MessageBox.Show("ERROR: Invalid Input. Must only enter 1, 2 or 3");
+                        MessageBox.Show("ERROR: Invalid Input. You must enter the number of the option you wish to choose.");
                         Console.Clear();
                         Console.WriteLine();
                     }
