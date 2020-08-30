@@ -34,7 +34,6 @@ namespace GUIDGenerator
                 do
                 {
                     Console.Write("Would you like to generate another? (Y)es or (N)o: ");
-                    Console.WriteLine();
                     var answer = Console.ReadLine();
 
                     if (answer == "Y" || answer == "y")

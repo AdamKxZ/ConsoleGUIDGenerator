@@ -6,7 +6,8 @@ namespace GUIDGenerator
     {
         public void GenerateGuid()
         {
-            Console.WriteLine(Guid.NewGuid());
+            var guid = Guid.NewGuid().ToString().ToUpper();
+            Console.WriteLine(guid);
             Console.WriteLine();
             Console.ReadKey();
         }
