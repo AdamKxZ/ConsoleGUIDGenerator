@@ -16,6 +16,7 @@ namespace GUIDGenerator
         [STAThread]
         static void Main(string[] args)
         {
+            Console.Title = "Basic Console GUID Generator v0.1";
             Generator gen = new Generator();
             bool isValid = true;
 
@@ -37,8 +38,9 @@ namespace GUIDGenerator
                 {
                     Console.WriteLine("What would you like to do?");
                     Console.WriteLine("1. Generate GUID");
-                    Console.WriteLine("2. List Generated GUIDs");
-                    Console.WriteLine("3. QUIT");
+                    Console.WriteLine("2. Generate Multiple GUIDs");
+                    Console.WriteLine("3. List GUIDs Generated");
+                    Console.WriteLine("4. QUIT");
                     Console.Write("OPTION: ");
                     var answer = Console.ReadLine();
                     Console.WriteLine();
@@ -51,12 +53,19 @@ namespace GUIDGenerator
                     }
                     else if (answer == "2")
                     {
-                        gen.PrintList();
+                        gen.GenerateMultipleGuid();
                         isValid = false;
                         askToContinue = false;
                         AskToContinue();
                     }
                     else if (answer == "3")
+                    {
+                        gen.PrintList();
+                        isValid = false;
+                        askToContinue = false;
+                        AskToContinue();
+                    }
+                    else if (answer == "4")
                     {
                         isValid = false;
                         askToContinue = false;
