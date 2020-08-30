@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 /* 
  *    BASIC GUID GENERATOR
@@ -12,6 +13,7 @@ namespace GUIDGenerator
         string programName = "BASIC GUID GENERATOR";
         string programVerson = "0.1";
 
+        [STAThread]
         static void Main(string[] args)
         {
             Generator gen = new Generator();
@@ -33,22 +35,36 @@ namespace GUIDGenerator
                 bool askToContinue = true;
                 do
                 {
-                    Console.Write("Would you like to generate another? (Y)es or (N)o: ");
+                    Console.WriteLine("What would you like to do?");
+                    Console.WriteLine("1. Generate GUID");
+                    Console.WriteLine("2. List Generated GUIDs");
+                    Console.WriteLine("3. QUIT");
+                    Console.Write("OPTION: ");
                     var answer = Console.ReadLine();
+                    Console.WriteLine();
 
-                    if (answer == "Y" || answer == "y")
+                    if (answer == "1")
                     {
+                        Console.Clear();
                         isValid = true;
                         askToContinue = false;
                     }
-                    else if (answer == "N" || answer == "n")
+                    else if (answer == "2")
+                    {
+                        gen.PrintList();
+                        isValid = false;
+                        askToContinue = false;
+                        AskToContinue();
+                    }
+                    else if (answer == "3")
                     {
                         isValid = false;
                         askToContinue = false;
                     }
                     else
                     {
-                        Console.WriteLine("ERROR: Invalid Input. Must enter either 'Y' or 'N' only!");
+                        MessageBox.Show("ERROR: Invalid Input. Must only enter 1, 2 or 3");
+                        Console.Clear();
                         Console.WriteLine();
                     }
                 } while (askToContinue);
