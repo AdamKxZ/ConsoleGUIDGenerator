@@ -33,20 +33,27 @@ namespace GUIDGenerator
             Console.ReadLine();
 
 
-            // Initial loop
+            // Initial basic loop begins
             do
             {
+                // Generates GUID
                 gen.GenerateGuid();
+                // Ask user if they want to continue
                 AskToContinue();
             } while (isValid);
 
             void AskToContinue()
             {
+                // Declare boolean for AskToContinue loop
                 bool askToContinue = true;
+
+                // Begin menu loop
                 do
                 {
+                    // Ask user for options
                     gen.Menu();
 
+                    // If/else menu logic
                     if (gen.answer == "1")
                     {
                         Console.Clear();
