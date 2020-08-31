@@ -10,21 +10,30 @@ namespace GUIDGenerator
 {
     class Program
     {
-        string programName = "BASIC GUID GENERATOR";
-        string programVerson = "0.1";
-
         [STAThread]
         static void Main(string[] args)
         {
-            Console.Title = "Basic Console GUID Generator v0.1";
+            // Program name and version
+            string programName = "Simple Console GUID Generator";
+            string programVersion = "v0.2";
+
+            // Set Console Window Name to program name
+            Console.Title = programName + " " + programVersion;
+
+            // Create generator object from Generator class
             Generator gen = new Generator();
+
+            // Initiliaze main loop variable
             bool isValid = true;
 
+            // Begin program with useless title
             gen.StartProgram();
 
             Console.WriteLine("Press any key to generate a GUID.");
             Console.ReadLine();
 
+
+            // Initial loop
             do
             {
                 gen.GenerateGuid();
@@ -59,6 +68,13 @@ namespace GUIDGenerator
                         AskToContinue();
                     }
                     else if (gen.answer == "4")
+                    {
+                        gen.SaveGUIDs();
+                        isValid = false;
+                        askToContinue = false;
+                        AskToContinue();
+                    }
+                    else if (gen.answer == "5")
                     {
                         isValid = false;
                         askToContinue = false;
