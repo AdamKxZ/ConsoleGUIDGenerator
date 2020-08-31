@@ -13,6 +13,8 @@ namespace GUIDGenerator
         [STAThread]
         static void Main(string[] args)
         {
+            
+            
             // Program name and version
             string programName = "Simple Console GUID Generator";
             string programVersion = "v0.2";
@@ -79,6 +81,11 @@ namespace GUIDGenerator
                     {
                         isValid = false;
                         askToContinue = false;
+                    }
+                    else if (gen.answer == "6")
+                    {
+                        gen.SaveToDatabase();
+                        isValid = false;
                     }
                     else
                     {

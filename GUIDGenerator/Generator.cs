@@ -37,6 +37,19 @@ namespace GUIDGenerator
             Console.WriteLine();
         }
 
+        public void SaveToDatabase()
+        {
+            var context = new GuidEntity();
+            var post = new GUID()
+            {
+                GUID1 = GUIDS,
+                DateAdded = DateTimeOffset.Now
+            };
+            context.GUIDs.Add(post);
+            context.SaveChanges();
+            Console.WriteLine("GUIDs succesfully saved to the Database.");
+            Console.ReadLine();
+        }
         public void SaveGUIDs()
         {
             // Ask user for file destination
