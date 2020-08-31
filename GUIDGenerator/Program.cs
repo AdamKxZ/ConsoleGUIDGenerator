@@ -64,22 +64,16 @@ namespace GUIDGenerator
                     {
                         gen.GenerateMultipleGuid();
                         isValid = false;
-                        askToContinue = false;
-                        AskToContinue();
                     }
                     else if (gen.answer == "3")
                     {
                         gen.PrintList();
                         isValid = false;
-                        askToContinue = false;
-                        AskToContinue();
                     }
                     else if (gen.answer == "4")
                     {
                         gen.SaveGUIDs();
                         isValid = false;
-                        askToContinue = false;
-                        AskToContinue();
                     }
                     else if (gen.answer == "5")
                     {
