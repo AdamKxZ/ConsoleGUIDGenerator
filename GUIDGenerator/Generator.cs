@@ -88,11 +88,28 @@ namespace GUIDGenerator
             Console.Clear();
 
             // Ask user how many GUIDs they want to generate
-            Console.Write("How many GUIDs would you like to generate?: ");
-            int amount = Convert.ToInt32(Console.ReadLine());
+            var success = false;
+            var result = 0;
+            
+            do
+            {
+                Console.Write("How many GUIDs would you like to generate?: ");
+                var amount = Console.ReadLine();
+                success = Int32.TryParse(amount, out result);
+
+                if (!success)
+                {
+                    Console.WriteLine("You must enter a number!");
+                    Console.ReadLine();
+                }
+
+            } while (!success);
+
+            Console.Clear();
+            
 
             // For loop generates GUIDs, stores in list and outputs to console
-            for (int i = 0; i < amount; i++)
+            for (int i = 0; i < result; i++)
             {
                 string guids = Guid.NewGuid().ToString().ToUpper();
                 GUIDS.Add(guids);
