@@ -87,6 +87,9 @@ namespace GUIDGenerator
                         Console.WriteLine();
                     }
                 } while (askToContinue);
+
+                Console.WriteLine("Press any key to exit the application.");
+                Console.ReadKey();
             }
         }
     }
