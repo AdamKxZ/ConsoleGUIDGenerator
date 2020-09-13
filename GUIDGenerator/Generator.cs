@@ -16,7 +16,7 @@ namespace GUIDGenerator
             // Generates a single GUID and copies it to the users clipboard.
 
             // Generate GUID to guid variable
-            var guid = Guid.NewGuid().ToString().ToUpper();
+            var guid = Guid.NewGuid().ToString();
 
             // Add it to GUID list
             GUIDS.Add(guid);
