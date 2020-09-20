@@ -35,7 +35,7 @@ namespace GUIDGenerator
         public void StartProgram()
         {
             // Useless starting function to clean up main function
-            Console.WriteLine("Basic Console GUID Generator");
+            Console.WriteLine("GUID Generator");
             Console.WriteLine();
         }
 
