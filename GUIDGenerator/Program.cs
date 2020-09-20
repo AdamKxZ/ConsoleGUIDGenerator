@@ -14,7 +14,7 @@ namespace GUIDGenerator
         static void Main(string[] args)
         {
             // Program name and version
-            string programName = "Simple Console GUID Generator";
+            string programName = "Console GUID Generator";
             string programVersion = "v0.2";
 
             // Set Console Window Name to program name
