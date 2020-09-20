@@ -11,6 +11,8 @@ namespace GUIDGenerator
         public List<string> GUIDS = new List<string>();
         // Declare variable to store menu choice
         public string answer { get; set; }
+
+        // GUID Methods
         public void GenerateGuid()
         {
             // Generates a single GUID and copies it to the users clipboard.
@@ -90,7 +92,7 @@ namespace GUIDGenerator
             // Ask user how many GUIDs they want to generate
             var success = false;
             var result = 0;
-            
+
             do
             {
                 Console.Write("How many GUIDs would you like to generate?: ");
@@ -106,7 +108,7 @@ namespace GUIDGenerator
             } while (!success);
 
             Console.Clear();
-            
+
 
             // For loop generates GUIDs, stores in list and outputs to console
             for (int i = 0; i < result; i++)
